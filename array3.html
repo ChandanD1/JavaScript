@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <style>
+            button {
+  margin: 20px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn-16 {
+  border: none;
+  color: #000;
+}
+.btn-16:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  transition: all 0.3s ease;
+}
+.btn-16:hover {
+  color: #000;
+}
+.btn-16:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+.btn-16:active {
+  top: 2px;
+}
+        </style>
+    </head>
+    <body>
+        <script>
+            function  arr1()
+            {
+                alert("array method :- 1")
+                data=[12,true,"mumbai","navi mumbai","kharghar"];
+                alert(data.length);
+                var ctr=0;
+                while(ctr<data.length)
+                {
+                    alert(data[ctr]);
+                    ctr++;
+                }
+                ans=data.reverse();
+                alert(ans.toString());
+                alert(ans[3]);
+
+            }
+
+            function  arr2()
+            {
+                alert("array method :- 2")
+                var data=new Array(10);
+                document.write("<hr>");
+                data.push("mumbai");
+                document.write("The Length of the array "+data.length);
+                document.write("<hr>");
+                document.write(data.toString());
+                document.write("<hr>");
+                data.pop();
+                data.pop();
+                document.write("<hr>");
+                document.write("The array after pop");
+                document.write(data.toString());
+            }
+
+            function  arr3()
+            {
+                alert("array method :- 3")
+                let data= new Array();
+                data[0]="Monday";
+                data[1]="Tuesday";
+               
+                data.push("Wednesday");
+                data.push("Thursday");
+                for(x in data)
+                {
+                    document.write("<p style='color:red;font-size:2em'>");
+                    document.write(x);
+                    document.write("</p>");
+                }
+            }
+        </script>
+
+        <button class="custom-btn btn-16" onclick="arr1()" value="Array1">Array 1</button>
+
+        <button class="custom-btn btn-16" onclick="arr2()" value="Array2">Array 2</button>
+
+        <button class="custom-btn btn-16" onclick="arr3()" value="Array3">Array 3</button>
+
+        <!-- <input type="button" onclick="arr1()" value="Array1">
+        <br>
+
+        <input type="button" onclick="arr1()" value="Array2">
+        <br>
+
+        <input type="button" onclick="arr1()" value="Array3"> -->
+        <br>
+    </body>
+</html>
