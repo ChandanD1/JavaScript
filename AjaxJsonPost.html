@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Ajax JSON Post</title>
+    <style>
+        .btn{
+            width: 100px;
+            height: 30px;
+            margin: 10px 0 0 20px;
+            font-size:15px;
+            border: 2px;
+            border-radius: 60px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function getData() {
+            const data = new FormData(form);
+            var a = data.get("txtproductname");
+            var b = data.get("txtprice");
+            var c = data.get("txtqty");
+            alert(a);
+            alert(b);
+            alert(c);
+            var obj = {};
+            obj.productName = a;
+            obj.price = b;
+            obj.qty = c;
+            var str = JSON.stringify(obj);
+            alert(str);
+            
+        }
+    </script>
+    <form id="form">
+        <p>Product Id: <input type="text" name="txtproductname"></p>
+        <p>Price: <input type="text" name="txtprice"></p>
+        <p>Quantity: <input type="text" name="txtqty"></p>
+        <input type="button" class="btn" value="check data" onclick="getData();"><br>
+        <div id="d1" style="color:blue;font-size:2em"></div>
+        <div id="d2" style="color:red;font-size:2em"></div>
+    </form>
+</body>
+
+</html>

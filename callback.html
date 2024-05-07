@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <script>
+        function add(num1, num2,fn)
+        {
+            var ans=num1+num2;
+
+            fn(ans);
+        }
+
+        function fun1()
+        {
+            add(12,13,function(a)
+            {
+                alert("the answer is "+a);
+            });
+        }
+      </script>
+      <input type="button" onclick="fun1()" value="fun">
+      <br>
+    </body>
+</html>
