@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <script>
+            function validatefunction()
+            {
+                if(t1.value==" ")
+                {
+                    alert("hi")
+                    return false;
+                }
+                return true;
+            }
+        </script>
+        <form method="get" action="evt1.html" onsubmit="return validatefunction()">
+            Name:<input type="text" value="" id="t1">
+            <hr>
+            <input type="submit" value="submit button">
+            <hr>
+            <input type="button" onclick="validatefunction()" value="button">
+        </form>
+    </body>
+</html>
