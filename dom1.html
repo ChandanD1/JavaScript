@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            .note{background-color:green;color:white;font-size:2em}
+            .bright{background-color:red;color:yellow;font-size:2em}
+        </style>
+        <script>
+            function dom1()
+            {
+                alert("dom 1");
+                var x=document.getElementById("d1");
+                alert(x.childNodes.length);
+                alert(x.childNodes.item(5).childNodes.item(0).nodeValue);
+            }
+            function dom2()
+            {
+                alert("dom 2");
+                var x=document.getElementById("d1");
+                alert(x.childNodes.length);
+                alert(x.childNodes.item(7).childNodes.item(0).nodeValue);
+            }
+            function dom3()
+            {
+                alert("dom 3");
+                var x=document.getElementById("d1");
+                x.childNodes.item(1).setAttribute("class","note")
+            }
+            function dom4()
+            {  
+                var x=document.getElementById("d1")
+                var y=x.childNodes.item(7).getAttribute("class");
+                if(y=="bright")
+                {
+                    x.childNodes.item(7).setAttribute("class","note");
+                }
+                else{
+                    x.childNodes.item(7).setAttribute("class","bright");
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <div id="d1">
+            <p>Jeevan</p>
+            <p>Garvit</p>
+            <p>Gaurang</p>
+            <p>Tanmay</p>
+        </div>
+        <input type="button" onclick="dom1()" value="dom1">
+        <input type="button" onclick="dom2()" value="dom2">
+        <input type="button" onclick="dom3()" value="dom3">
+        <input type="button" onclick="dom4()" value="dom4">
+    </body>
+</html>
