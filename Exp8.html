@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+<style>
+    body
+    {
+        background-color: blanchedalmond;
+    }
+    .error {
+        color: red;
+    }
+    .form{
+        border: 2px solid black;
+        align-content: center;
+        text-align: center;
+        width:30%;
+        background-color: rgba(249, 137, 0, 0.871);
+        margin-left: 30%;
+        display: block;
+    }
+    .submit
+    {
+        border: 0;
+        width:60px;
+        height:30px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+    <div class="form">
+    <h1>Form Validation</h1>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <span id="nameError" class="error"></span><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span id="emailError" class="error"></span><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required>
+        <span id="phoneError" class="error"></span><br><br>
+
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other" required>
+        <label for="other">Other</label><br>
+        <span id="genderError" class="error"></span><br><br>
+
+        <input type="submit" value="Submit" class="submit">
+        
+    </form>
+    </div>
+    <script>
+        var form = document.getElementById('myForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            validateForm();
+        });
+
+        function validateForm() {
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var phone = document.getElementById('phone').value.trim();
+            var gender = document.querySelector('input[name="gender"]:checked');
+
+            var namepatt = /^[a-zA-Z ]{2,30}$/;
+            var emailpatt = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var phonepatt = /^\d{10}$/;
+
+            //name
+            if (!namepatt.test(name)) {
+                document.getElementById('nameError').textContent = 'Enter a valid name (2-30 characters)';
+                return;
+            }
+            document.getElementById('nameError').textContent = '';
+
+           //email
+            if (!emailpatt.test(email)) {
+                document.getElementById('emailError').textContent = 'Enter a valid email address';
+                return;
+            }
+            document.getElementById('emailError').textContent = '';
+
+            //phone
+            if (!phonepatt.test(phone)) {
+                document.getElementById('phoneError').textContent = 'Enter a valid 10-digit phone number';
+                return;
+            }
+            document.getElementById('phoneError').textContent = '';
+            
+            //gender
+            if (!gender) {
+                document.getElementById('genderError').textContent = 'Please select a gender';
+                return;
+            }
+            document.getElementById('genderError').textContent = '';
+
+            alert('Form submitted successfully!');
+            form.reset();
+        }
+    </script>
+</body>
+</html>
