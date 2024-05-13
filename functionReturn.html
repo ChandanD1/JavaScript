@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <script>
+            function data(num1,num2)
+            {
+                alert(num1);
+                alert(num2);
+
+                return(function(){
+                    alert("We will perform Calculations on "+ num1+" and "+num2);
+                });
+            }
+        </script>
+        <input type="button" onclick="(data(5,6) () )" value="return function">
+    </body>
+</html>
