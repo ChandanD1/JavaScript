@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>Validation Registration</title>
+    </head>
+    <style>
+        .container-1{
+            display: flex;
+            align-items: center;
+        }
+        .container-2{
+            display: flex;
+            align-items: center;
+        }
+        .btn-1{
+            width:100px;
+            height:80px;
+            margin: 10px 20px;
+            font-size:20px;
+            border: 10px;
+            border-radius: 20px;
+            padding:10px;
+            font-weight: 500;
+        }
+        .btn-2{
+            width:100px;
+            height:80px;
+            margin: 10px 20px;
+            font-size:20px;
+            border: 10px;
+            border-radius: 20px;
+            padding:10px;
+            font-weight: 500;
+        }
+    </style>
+    <body>
+        <script>
+            function OTP()
+            {
+                var otp =["1234","4532","8654","7901"];
+                var userEnteredOTP =prompt("Please Enter 4-Digit  OTP ");
+
+               for(var i=0;i<otp.length;i++)
+               {
+                 if(userEnteredOTP==otp[i])
+                 {
+                    x=document.getElementById("s1");
+                    x.style="color:green";
+                    x.innerHTML="CORRECT OTP";
+
+                    break;
+                 }
+                 else{
+
+                    x=document.getElementById("s1");
+                    x.style="color:red";
+                    x.innerHTML="IN-CORRECT OTP";
+                 }
+                   
+               }
+            }
+            function Pass()
+            {
+                   
+                
+            }
+        </script>
+        <div class="container-1">
+            <button onclick="OTP()" class="btn-1">OTP</button>
+             <span id="s1"></span>
+        </div>
+        <div class="container-2"> 
+            <button onclick="Pass()" class="btn-2">Password</button>
+        </div>
+
+    </body>
+</html>
