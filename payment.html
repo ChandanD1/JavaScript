@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Payments</title>
+    </head>
+    <body>
+        <script>
+            function upi(mfrom, mto, amount, fun1)
+            {
+                if(mfrom==null||mto==null||amount==null)
+                {
+                    fun1("ERROR")
+                }
+                else{
+                    fun1("SUCCESS")
+                }
+            }
+            function bhimupi(m1, m2, amt)
+            {
+                upi(m1, m2, amt, function(a)
+                    {
+                        if(a.toLowerCase()=="success")
+                            document.write("<p style='color:green'>Payment Done</p>")
+                        else
+                            if(a.toLowerCase()=="error")
+                                document.write("<p style='color:red'>ERROR</p>")
+                            else
+                                document.write("UNKNOWN")
+                    });
+            }
+            function gpay(m1, m2, amt)
+            {
+                upi(m1, m2, amt, function(a)
+                    {
+                        if(a.toLowerCase()=="success")
+                            document.write("<img src='https://lh3.googleusercontent.com/P2Cw79cwJ4g61Pg-CsO9YK4_BGLxKvRKgZ3O04qq3tlSyokE6xO3IQtH6KQ7cOSarHg=w700' style='background-size:cover;height:50%;width:20%'>")
+                        else
+                            if(a.toLowerCase()=="error")
+                                document.write("<img src='https://forums.androidcentral.com/data/attachments/250/250388-b2059f9d971c846c4647e7dce00b210f.jpg' style='background-size:cover;'>")
+                            else
+                                document.write("UNKNOWN")
+                    });
+            }
+            function phonepay(m1, m2, amt)
+            {
+                upi(m1, m2, amt, function(a)   
+                    {
+                        if(a.toLowerCase()=="success")
+                            document.write("<p style='color:green'>₹1000 paid</p>")
+                        else
+                            if(a.toLowerCase()=="error")
+                                document.write("<p style='color:red'>₹1000 not paid</p>")
+                            else
+                                document.write("UNKNOWN")
+                    });
+            }
+        </script>
+        <input type="button" onclick="bhimupi(null, null, 9000)" value="BHIM NULL">
+        <br>
+        <input type="button" onclick="bhimupi(1234567890, 9876543201, 20000)" value="BHIM 20000">
+        <br>
+        <input type="button" onclick="gpay(null, null, 9000)" value="GPAY NULL">
+        <br>
+        <input type="button" onclick="gpay(1234567890, 9876543201, 20000)" value="GPAY 20000">
+        <br>
+
+        <input type="button" onclick="phonepay(null, null, 10000)" value="phonepay NULL">
+        <br>
+
+        <input type="button" onclick="phonepay(1234567890, 9876543201, 10000)" value="phonepay 10000">
+        <br>
+    </body>
+</html>
