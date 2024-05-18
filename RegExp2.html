@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Regular Expression : Chandan </title>
+    </head>
+    <style>
+        button{
+            display:flex;
+            padding:10px;
+            margin: 20px;
+            font-size:1em;
+            border: 0;
+            border-radius: 20px;
+        }
+    </style>
+    <body>
+        <script>
+            function reg1()
+            {
+                alert("Regular Expression 1");
+                var x=t1.value;
+                var patt =/\b[ABCD]/i;
+                var cities=["Ahmedabad","Pune","Mumbai","Banglore","Chennai","Pondicherry","Daman"];
+                ans=0;
+                for(ctr=0;ctr<cities.length;ctr++)
+                {
+                    if(patt.test(cities[ctr]))
+                    ans=ans+1;
+                }
+               document.write("The Number of Cities Found with the pattern is "+ans);
+
+            }
+            function reg2()
+            {
+                alert("Regular Expression 2");
+                let empid=t1.value;
+                var patt=/E\d{3}/
+
+                if(empid.length==4 && patt.test(empid))
+                {
+                    x=document.getElementById("s1")
+                    x.style="color:green";
+                    x.innerHTML="Valid Employee ID";
+                }
+                else{
+                    x=document.getElementById("s1")
+                    x.style="color:red";
+                    x.innerHTML="In-Valid Employee ID";
+                }
+            }
+            function reg3()
+            {
+                alert("Regular Expression 3");
+                let patt=/mumbai/ig;
+                var y=t1.value;
+                if(patt.test(y))
+                {  
+                    y=y.toUpperCase();
+                    document.getElementById("s1").innerHTML=y;
+                }
+                else{
+                  document.getElementById("s1").innerHTML=y;
+                }
+            }
+            function reg4()
+            {
+                alert("Regular Expression 4");
+                var patt=/tamil nadu/ig;
+                var z=t1.value;
+
+                if(patt.test(z))
+                {
+                    z=z.replace(patt,"chennai");
+                    document.getElementById("s1").innerHTML=z;
+                }
+                else{
+                    document.getElementById("s1").innerHTML=z;
+                }
+            
+            }
+        </script>
+        Enter the text: <input type="text" id="t1"><span id="s1"></span>
+        <button type="button" onclick="reg1()">Regular Expression 1 </button>
+
+        <button type="button" onclick="reg2()">Regular Expression 2</button>
+
+        <button type="button" onclick="reg3()">Regular Expression 3</button>
+
+        <button type="button" onclick="reg4()">Regular Expression 4</button>
+    </body>
+</html>
