@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <script>
+            function Skit(Name, noOfActors) {
+                this.name = Name;
+                this.noOfActors = noOfActors;
+                this.dailogues = function () {
+                    alert("JODDDD !!!");
+                };
+            }
+
+            let skit1 = new Skit("Ram-seeta", 2);
+            alert("Skit Name: "+ skit1.name);
+            alert("Number of Actors: "+skit1.noOfActors);
+            skit1.dailogues();
+        </script>
+    </body>
